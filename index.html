@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <!--aquí introduciré un código javascript dentro del código html, no externo como podría hacerlo creando un archivo script.js
+    , utilizamos una función serInterval(), propia de javascript que actualiza la hora en tiempo real, describiremos paso a 
+    paso qué hace cada función-->
+    <script>
+        function mostrarHora() {
+          var fecha = new Date(); // Obtiene la fecha y hora actual
+          var dia = fecha.getDate(); // Obtiene el día actual
+          var mes = fecha.getMonth() + 1; // Obtiene el mes actual (se suma 1 porque los meses comienzan en 0)
+          var año = fecha.getFullYear(); // Obtiene el año actual
+          var hora = fecha.getHours(); // Obtiene la hora actual
+          var minutos = fecha.getMinutes(); // Obtiene los minutos actuales
+          var segundos = fecha.getSeconds(); // Obtiene los segundos actuales
+          
+          // Agrega un cero inicial si los minutos y segundos son menores a 10
+          if (minutos < 10) {
+            minutos = "0" + minutos;
+          }
+          if (segundos < 10) {
+            segundos = "0" + segundos;
+          }
+          
+          // Crea el formato de fecha y hora
+          var fechaHoraActual = dia + "/" + mes + "/" + año + " " + hora + ":" + minutos + ":" + segundos;
+          
+          // Actualiza el contenido del elemento con el ID "fecha-hora-actual" con la fecha y hora obtenidas
+          document.getElementById("fecha-hora-actual").textContent = fechaHoraActual;
+        }
+        
+        // Actualiza la fecha y hora cada segundo utilizando setInterval()
+        setInterval(mostrarHora, 1000);
+      </script>
+
+<!--a continuación añadiré el favicon de mi sitio web, es un 10 dentro de un circulo azul-->
+<link rel="icon" href="favicon CIJG.png" type="image/x-icon">
+     <!--en esta sección añadiré el título del sitio web con mi nombre-->
+     <title>Cristian Ignacio Jofré Guerra</title>
+     <!--aquí comenzaremos a cargar el responseive (que se adapte a dispositivos móviles) con css dentro del html-->
+     <style>
+         /* Estilos globales */
+         /* Selectores y estilos comunes para todo el sitio */
+     
+         /* Estilos responsive */
+         @media (max-width: 768px) {
+           /* Estilos para pantallas de hasta 768px de ancho */
+         }
+     
+         @media (max-width: 576px) {
+           /* Estilos para pantallas de hasta 576px de ancho */
+         }
+       </style>
+     <style>
+         .imagen-responsive {
+           max-width: 100%; /* Ancho máximo del contenedor */
+           height: auto; /* Altura automática proporcional */
+         }
+       </style>
+       <!--ahí arriba terminamos el responsive-->
+</head>
+<header>
+      <!--Este código siguiente lo tacharé ya que necesito que sea un css que esté centrado, entonces utilizaré el css que dejaré más abajo-->
+        <!--aquí añadiré una banner en responsive con tamaño autoajustable-->
+        <!--<img class="imagen-responsive" src="Banner Ignacio Jofré.webp" alt="banner de Ignacio Jofré">-->
+        <!--en esta sección añadiré el título que se verá en el header, pero no como <title>, sino que con una etiqueta 
+        h1 para que el texto se vea grande y en negritas, con el nombre del curso-->
+        <!--<h1>Sistemas informáticos COM-203ES-AVOL2</h1> -->
+        <style>
+            .container {
+              text-align: center;
+            }
+          </style>
+          
+          <div class="container">
+            <img class="imagen-responsive" src="Banner-Ignacio.webp" alt="banner de Ignacio Jofré">
+            <!--estaba terminando mi trabajo pero me di cuenta que me faltaba subrayar el título, ahora le agregaré un <u>-->
+            <h1><u>Sistemas informáticos COM-203ES-AVOL2</u></h1>
+          </div>
+</header>
+<body>
+
+    <!--aquí añadiré una imagen-->
+         <!--aquí comenzaremos a cargar el responseive (que se adapte a dispositivos móviles) con css dentro del html-->
+         <style>
+            /* Estilos globales */
+            /* Selectores y estilos comunes para todo el sitio */
+        
+            /* Estilos responsive */
+            @media (max-width: 768px) {
+              /* Estilos para pantallas de hasta 768px de ancho */
+            }
+        
+            @media (max-width: 576px) {
+              /* Estilos para pantallas de hasta 576px de ancho */
+            }
+          </style>
+        <style>
+            .imagen-responsive {
+              max-width: 100%; /* Ancho máximo del contenedor */
+              height: auto; /* Altura automática proporcional */
+            }
+          </style>
+          <!--ahí arriba terminamos el responsive-->
+    <img class="imagen-responsive" src="CIJG.webp" alt="foto perfil Ignacio Jofré">
+
+    <!--ahora añadiré el nombre del curso y su código con una etiqueta h2-->
+    <h2>Cristian Ignacio Jofré Guerra</h2>
+       <!--en esta sección añadiré el código del tiempo actual de tu propia computadora, espero que lo respete porque sólo lo probé en mi mac-->
+       <h3>¿Quieres saber tu fecha y hora actual? ¿Se rompió el reloj de tu dispositivo?</h3>
+       <h4>La fecha y hora actual de tu dispositivo es: <span id="fecha-hora-actual"></span></h4>
+    <!--en esta sección añadiré los números del 1 al 10 acomapañado de unas lindas ilustraciones de manzanitas, a un tamaño máximo de 35pixeles, usaré css ya que de lo contrario, las imágenes quedarían abajo del texto en vez de quedar al costado del texto, sin emabrgo, cuando se active el responsive, quedarán abajo del texto las imagenes correspondiendtes a cada número-->
+    <h2>Mira esta práctica lista de números listados del uno al diez, uno nunca sabe cuando te puedes olvidar de su órden lógico</h2>
+<style>
+  .image-with-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .image-with-text img {
+    margin-right: 10px;
+    max-width: 35px;
+  }
+
+  h2 {
+    margin-right: 5px;
+  }
+/* aquí primero había intentado un  flex-direction: column; , pero al cargar el responsive, me dejaba las manzanas abajo 
+de los números en dispositivos móviles, luego probé un  justify-content: space-between; sin embargo lo que hizo fue dejarme 
+un espacio intermedio entre las manzanas pero me lo alineó a la derecha, tampoco me sirvió, al final lo dejé con el      
+justify-content: flex-start actual, que me disminuye el tamaño intermedio y muestra las manzanas totales al cargar el 
+responsive en celulares*/
+  @media (max-width: 768px) {
+    .image-with-text {
+      justify-content: flex-start
+    }
+
+    .image-with-text img {
+      margin-right: 0;
+      margin-bottom: 5px;
+      max-width: 100%; /* Modificación: Ancho máximo de la imagen al 100% */
+    }
+
+    h2 {
+      margin: 0;
+    }
+  }
+</style>
+      <div class="image-with-text">
+      <!--los &nbsp son simples espacios para que no queden tan pegadas las manzanas a mis números-->
+        <h2>1=</h2>&nbsp&nbsp&nbsp
+        <img src="manzana.png">
+      </div>
+      <div class="image-with-text">
+        <h2>2=</h2>&nbsp&nbsp&nbsp
+        <img src="manzana.png"><img src="manzana.png">
+      </div>
+    <div class="image-with-text">
+        <h2>3=</h2>&nbsp&nbsp&nbsp
+        <img src="manzana.png"><img src="manzana.png"><img src="manzana.png">
+      </div>
+      <div class="image-with-text">
+        <h2>4=</h2>&nbsp&nbsp&nbsp
+        <img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png">
+      </div>
+      <div class="image-with-text">
+        <h2>5=</h2>&nbsp&nbsp&nbsp
+        <img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png">
+      </div>
+      <div class="image-with-text">
+        <h2>6=</h2>&nbsp&nbsp&nbsp
+        <img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png">
+      </div>
+      <div class="image-with-text">
+        <h2>7=</h2>&nbsp&nbsp&nbsp
+        <img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png">
+      </div>
+      <div class="image-with-text">
+        <h2>8=</h2>&nbsp&nbsp&nbsp
+        <img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png">
+      </div>
+      <div class="image-with-text">
+        <h2>9=</h2>&nbsp&nbsp&nbsp
+        <img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png">
+      </div>
+      <div class="image-with-text">
+        <h2>10=</h2>&nbsp&nbsp&nbsp
+        <img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png"><img src="manzana.png">
+      </div>  
+<!--aquí añadiré un css de para que el texto quede al centro del sitio y esté en responsivo-->    
+<style>
+    footer {
+      text-align: center;
+    }
+  
+    @media (max-width: 768px) {
+      footer {
+        position: static;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px;
+        text-align: center;
+      }
+    }
+  </style>  
+<footer>
+    <!--aquí agregaré un guiño a mi empresa de marketing y creación de sitios web, nunca está de más un backlink a nuestros negocios
+    , la empresa se llama expande digital, también me pueden encontrar en dreamoms.com/equipo-dreamoms-->
+    <!--añadiré un target blank para que abra el link en una nueva pestaña-->
+    <p>
+    Copyright <a href="https://www.expandedigital.com" target="_blank"> Expande Digital Consultores ® Soluciones en Marketing 2023</a>
+    </p>
+</footer>
+
+</body>
+</html>
